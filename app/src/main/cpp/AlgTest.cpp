@@ -10,8 +10,8 @@ AlgTest::AlgTest() {
 }
 
 double AlgTest::calc(int n) {
-    delete arr;
     double startTime = clock();
+    delete arr;
     arr = new double[n];
 
     for(int i = 0; i < n; i++) {
