@@ -28,7 +28,6 @@ public class MainActivity extends Activity {
      */
     public native double calc(int n);
 
-
     @BindView(R.id.java)
     TextView java;
 
