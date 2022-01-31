@@ -11,7 +11,7 @@ public:
     AlgTest();
     double *arr;
 
-    double calc(int n);
+    void calc(int n);
 
     ~AlgTest();
 };

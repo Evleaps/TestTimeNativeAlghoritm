@@ -6,25 +6,53 @@
     android:layout_height="match_parent"
     tools:context="com.example.raymaletdin.testtimenativealghoritm.MainActivity">
 
-    <Button
-        android:id="@+id/send"
-        android:layout_width="wrap_content"
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="send"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Эта программа сравнивает скорость работы алгоритма для Java и для C++ используюя технологию NDK"
+        android:textColor="#314d61"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.965" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:gravity="center"
+        android:text=" \n Алгоритм представляет собой массив из N эл-в который заполняется числами Фиббоначи, после чего каждому элементу присваивается результат деления текущего элемента на предыдущий. \n \n Рекомендации: \n Число больше 5 000"
+        android:textColor="#314d61"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        tools:ignore="MissingConstraints" />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="10dp"
+        android:hint="Введите размер массива"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@id/send"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/description"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/java"
         android:layout_width="wrap_content"
-        android:layout_height="21dp"
+        android:layout_height="wrap_content"
         android:text="Скорость Java"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toTopOf="@+id/cpp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText"
         tools:ignore="MissingConstraints" />
@@ -34,79 +62,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Скорость C++"
-        app:layout_constraintBottom_toTopOf="@+id/result"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/java"
         tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/result"
+    <Button
+        android:id="@+id/send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Результат сравнения"
-        app:layout_constraintBottom_toTopOf="@+id/send"
+        android:text="start"
+        app:layout_constraintStart_toEndOf="@id/editText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cpp"
-        app:layout_constraintVertical_bias="0.526" />
-
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Эта программа сравнивает скорость работы алгоритма для Java и для C++"
-        android:textColor="#314d61"
-        app:layout_constraintBottom_toTopOf="@+id/ndk"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.026" />
-
-    <TextView
-        android:id="@+id/description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text=" \n Алгоритм представляет собой массив из N эл-в который заполняется числами Фиббоначи, после чего каждому элементу присваивается результат деления текущего элемента на предыдущий. \n \n Рекомендации: \n Число больше 5 млн"
-        android:textColor="#314d61"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ndk"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/ndk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Использовался \nNDK"
-        android:textColor="#ff0000"
-        app:layout_constraintBottom_toTopOf="@+id/description"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="228dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        android:text="Введите размер массива"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="@id/editText"
+        app:layout_constraintBottom_toBottomOf="@id/editText"/>
 
 </android.support.constraint.ConstraintLayout>

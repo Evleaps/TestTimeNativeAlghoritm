@@ -9,8 +9,7 @@ AlgTest::AlgTest() {
     arr = NULL;// new double[size];
 }
 
-double AlgTest::calc(int n) {
-    double startTime = clock();
+void AlgTest::calc(int n) {
     delete arr;
     arr = new double[n];
 
@@ -21,10 +20,12 @@ double AlgTest::calc(int n) {
             arr[i] = arr[i - 1] + arr[i - 2];
     }
 
-    for(int i = 1; i < n; i++)
+    for(int i = 1; i < n; i++) {
         arr[i] /= arr[i - 1];
-
-    return (clock() - startTime) /CLOCKS_PER_SEC;
+        for(int k = 1; k < n; k++) {
+            arr[k] /= arr[k - 1];
+        }
+    }
 }
 
 AlgTest::~AlgTest() {

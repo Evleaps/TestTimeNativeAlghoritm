@@ -3,10 +3,10 @@
 
 extern "C"
 //указать тип возвр
-JNIEXPORT jdouble
+JNIEXPORT void
 
 JNICALL
-Java_com_example_raymaletdin_testtimenativealghoritm_MainActivity_calc(
+Java_com_example_raymaletdin_testtimenativealghoritm_MainActivity_calcNative(
         JNIEnv *env,
         jobject /* this */,
         jint n) {
